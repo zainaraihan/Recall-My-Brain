@@ -65,7 +65,7 @@ promise4.then((result) => {
 })
 
 // Promise.all
-// mengumpulkan semua resolve menjadi sebuah promise baru (array)
+// mengumpulkan semua resolve(jika resolve/reject tidak bisa dua duanya) menjadi sebuah promise baru (array)
 let promiseA = Promise.resolve(3);
 let promiseB = 34;
 let promiseC = new Promise((resolve, reject)=> {
@@ -74,4 +74,15 @@ let promiseC = new Promise((resolve, reject)=> {
 
 Promise.all([promiseA, promiseB, promiseC]).then((values)=>{
     console.log(values);
+}).catch((error) => {
+    console.log(error)
 })
+
+// contoh lain
+let promisez1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'First Promise');
+})
+let promisez2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 200, 'Second Promise');
+})
+let promisez3 = new Promise((resolve, ))
