@@ -200,3 +200,4 @@ taskPertama()
         .then(() => {
         console.log('Semua task telah selesai')
 })
+
