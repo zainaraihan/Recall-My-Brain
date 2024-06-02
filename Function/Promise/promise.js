@@ -80,9 +80,25 @@ Promise.all([promiseA, promiseB, promiseC]).then((values)=>{
 
 // contoh lain
 let promisez1 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 100, 'First Promise');
+    setTimeout(resolve, 300, 'First Promise');
 })
 let promisez2 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 200, 'Second Promise');
+    setTimeout(resolve, 200, 'Second Promise was Failed');
 })
-let promisez3 = new Promise((resolve, ))
+let promisez3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 300, 'Third Promise');
+})
+let promisez4 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 200, 'Second Promise was Failed');
+})
+
+Promise.all([promisez1, promisez2, promisez3]).then((result) => {
+    console.log(result);
+}).catch((error) => {
+    console.log(error)
+})
+
+// Promise.race method mengembalikan resolve atau reject selama hasil inputnya resolve atau reject
+Promise.race([promisez1, promisez3]).then((result) => {
+    console.log(result)
+})
