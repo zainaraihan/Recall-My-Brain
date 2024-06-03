@@ -110,4 +110,4 @@ async function asyncDataFetch(){
     }
 }
 
-asyncDataFetch()
+asyncDataFetch();
