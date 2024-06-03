@@ -68,3 +68,46 @@ function runAsyncFunction() {
     });
 }
 runAsyncFunction();
+// Fungsi dengan banyak promise
+// Menggunakan promise.all
+function dataFetch1() {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            var result1 = 'Fetch API 1 Done';
+            resolve(result1);
+        }, 2000);
+    });
+}
+;
+function dataFetch2() {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            var result2 = 'Fetch API 2 Done';
+            resolve(result2);
+        }, 3000);
+    });
+}
+;
+function fetchAllData() {
+    return __awaiter(this, void 0, void 0, function () {
+        var _a, data1, data2, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    _c.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, Promise.all([dataFetch1(), dataFetch2()])];
+                case 1:
+                    _a = _c.sent(), data1 = _a[0], data2 = _a[1];
+                    console.log(data1);
+                    console.log(data2);
+                    return [3 /*break*/, 3];
+                case 2:
+                    _b = _c.sent();
+                    console.error(Error);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    });
+}
+fetchAllData();

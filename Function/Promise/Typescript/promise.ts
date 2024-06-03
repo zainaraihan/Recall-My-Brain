@@ -22,3 +22,35 @@ async function runAsyncFunction() {
 }
 
 runAsyncFunction()
+
+// Fungsi dengan banyak promise
+// Menggunakan promise.all
+function dataFetch1(): Promise<string> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const result1 = 'Fetch API 1 Done';
+            resolve(result1);
+        }, 2000);
+    });
+};
+
+function dataFetch2(): Promise<string> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const result2 = 'Fetch API 2 Done';
+            resolve(result2);
+        }, 3000);
+    });
+};
+
+async function fetchAllData() {
+    try {
+        const [data1, data2] = await Promise.all([dataFetch1(), dataFetch2()]);
+        console.log(data1);
+        console.log(data2);
+    } catch {
+        console.error(Error);
+    }
+}
+
+fetchAllData();
