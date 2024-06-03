@@ -85,3 +85,29 @@ async function nyapa(){
 }
 
 nyapa();
+
+// Contoh penggunaan pada Fetch Data
+function dataFetch() {
+    return new Promise((resolve) =>{
+        setTimeout(() => {
+            resolve("Data Fetched");
+        }, 3000);
+    })
+}
+
+// Jika menggunakan Promise
+dataFetch()
+        .then((data)=> {console.log(data)})
+        .catch((error) => {console.log(error)});
+
+// Jika Menggunakan Async Await
+async function asyncDataFetch(){
+    try{
+        let data = await dataFetch()
+        console.log(data);
+    }catch{
+        console.error(error)
+    }
+}
+
+asyncDataFetch()
