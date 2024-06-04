@@ -14,13 +14,13 @@ const a = [45,34,23,45,90,20];
 console.log(averageValue(a));
 
 // Memisahkan Nilai Ganjil dan Genap
-function separateEvenOdd(array){
+function seperateNumbers(array){
     let even = [];
     let odd = [];
 
     for(arr of array){
-        if (arr % 2 === 0){
-            even.push(arr);
+        if(arr % 2 === 0){
+            even.push(arr); 
         }else{
             odd.push(arr);
         }
@@ -29,7 +29,7 @@ function separateEvenOdd(array){
     return {even, odd};
 }
 
-const array = [1,2,3,4,5,90,82,38,43]
-const {even, odd} = separateEvenOdd(array);
-console.log("Angka Genap :" + even);
-console.log("Angka Ganjil :" + odd)
+const num = [32,56,345,23,54,34,51,65,97];
+const {even, odd} = seperateNumbers(num);
+console.log('Angka Genap : ' + even);
+console.log('Angka Ganjil : ' + odd);
