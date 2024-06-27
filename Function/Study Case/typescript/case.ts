@@ -1,6 +1,6 @@
 // Menghitung rata rata nilai
 function averageValue(grades: number[]) {
-    if (grades == 0) {
+    if (grades.length === 0) {
         return 0;
     };
 
