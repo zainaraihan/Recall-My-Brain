@@ -46,7 +46,7 @@ let rehan = new Person3("Muhamad", "Rehan", 20);
 
 // Dot Nation
 console.log(person.firtsName);
-// Bracke Notion
+// Bracket Notion
 console.log(zain["lastName"]);
 
 // ***********************************************
